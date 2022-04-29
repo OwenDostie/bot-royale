@@ -1,20 +1,24 @@
 import interface
+import os
 
 c = interface.controller()
+gs=c.gs()
 
-c.state()
+while True:
+    # read the gamestate
+    gs = c.gs()
+    h = gs.my_hand
+    d = gs.my_deck
+    e = gs.my_elixer
 
-c.play('miner')
+    # figure out if it's time
+    if ('Balloon' in h) and ('Lumberjack' in h):
+        print('It is time.')
 
-c.state()
+    # print gamestate, get input, play card
+    c.printstate()
+    i = input("Which card do you wanna play? ")
+    c.play(i.title())
 
-c.play('wallbreakers')
-
-c.state()
-
-c.play('wallbreakers')
-
-c.state()
-
-[print(x) for x in c.cards if 'Witch' in x]
-print(len(c.cards))
+    # clear output 
+    os.system('cls')
