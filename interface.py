@@ -21,7 +21,7 @@ class controller:
         [print(x) for x in s.cards if card in x.lower()]
 
 class gamestate:
-    def __init__(s, deck = ['Lumberjack', 'Balloon', 'Elite Barbarians', 'Electro Wizard', 'Snowball', 'Miner', 'Spear Goblins', 'Fireball']):
+    def __init__(s, deck = ['Lumberjack', 'Balloon', 'Elite Barbarians', 'Electro Wizard', 'Snowball', 'Miner', 'Spear Goblins', 'Freeze']):
         shuffle(deck)
         s.my_hand = deck[0:4]
         s.my_deck = deck[4:8]
